@@ -2,7 +2,7 @@ class Yaal < Formula
 	desc "`yaal` is a cross platform, general purpose C++ library."
 	homepage "https://codestation.org/"
 	license "CC-BY-NC-ND-4.0"
-	url "https://codestation.org/darwin/yaal-0.0.43-2101041739.catalina.bottle.tar.gz"
+	url "/Users/amok/var/bb-slave/yaal/_deploy/darwin/../..", :using => :git
 	version "0.0.43-2101041739"
 
 	depends_on "pcre"
@@ -29,6 +29,7 @@ class Yaal < Formula
 	end
 
 	bottle do
+		root_url "https://codestation.org/darwin/"
 		sha256 "a0a45faff8bde5e85374bef9a61b27163830d6305b5b194dbef4b41bb731f830" => :catalina
 	end
 end
