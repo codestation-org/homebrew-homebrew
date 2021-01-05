@@ -2,8 +2,9 @@ class Huginn < Formula
 	desc "`huginn` A programming language with no quirks, so simple every child can master it."
 	homepage "https://huginn.org/"
 	license "CC-BY-NC-ND-4.0"
-	url "/Users/amok/var/bb-slave/huginn/_deploy/darwin/../..", :using => :git
+	url "https://codestation.org/darwin/huginn-0.0.3-2101041839.catalina.bottle.tar.gz"
 	version "0.0.3-2101041839"
+	sha256 "fcab9e321ac31ec321732e1bb06593d34bb6208708ae0831c53fe47e103bc6fa"
 
 	depends_on "yaal"
 	depends_on "pkg-config"  => :build
