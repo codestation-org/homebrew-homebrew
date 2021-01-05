@@ -4,7 +4,6 @@ class Yaal < Formula
 	license "CC-BY-NC-ND-4.0"
 	url "https://codestation.org/darwin/yaal-0.0.43-2101041739.catalina.bottle.tar.gz"
 	version "0.0.43-2101041739"
-	sha256 "a0a45faff8bde5e85374bef9a61b27163830d6305b5b194dbef4b41bb731f830"
 
 	depends_on "pcre"
 	depends_on "libxml2"
@@ -27,5 +26,9 @@ class Yaal < Formula
 		system "make", "PREFIX=#{prefix}", "CONFIGURE=--enable-auto-sanity", "SYSCONFDIR=#{etc}", "LOCALSTATEDIR=#{var}", "debug", "release"
 		system "make", "doc"
 		system "make", "install-debug", "install-release"
+	end
+
+	bottle do
+		sha256 "a0a45faff8bde5e85374bef9a61b27163830d6305b5b194dbef4b41bb731f830" => :catalina
 	end
 end

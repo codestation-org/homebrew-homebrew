@@ -4,7 +4,6 @@ class Huginn < Formula
 	license "CC-BY-NC-ND-4.0"
 	url "https://codestation.org/darwin/huginn-0.0.3-2101041839.catalina.bottle.tar.gz"
 	version "0.0.3-2101041839"
-	sha256 "fcab9e321ac31ec321732e1bb06593d34bb6208708ae0831c53fe47e103bc6fa"
 
 	depends_on "yaal"
 	depends_on "pkg-config"  => :build
@@ -33,5 +32,9 @@ class Huginn < Formula
 		system "make", "PREFIX=#{prefix}", "SYSCONFDIR=#{etc}", "LOCALSTATEDIR=#{var}", "release", "doc", "install-release"
 		system "env", "HUGINNPATH=./packages", "./build/release/huginn/1exec", "Testing", "tests"
 		system "env", "TARGET=release", "./tests/shell-tests.sh"
+	end
+
+	bottle do
+		sha256 "fcab9e321ac31ec321732e1bb06593d34bb6208708ae0831c53fe47e103bc6fa" => :catalina
 	end
 end
