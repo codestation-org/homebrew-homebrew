@@ -3,7 +3,12 @@ class Yaal < Formula
 	homepage "https://codestation.org/"
 	license "CC-BY-NC-ND-4.0"
 	url "/Users/amok/var/bb-slave/yaal/_deploy/darwin/../..", :using => :git
-	version "0.0.43-2101041739"
+	version "0.0.43-2101060636"
+
+  bottle do
+    root_url "https://codestation.org/darwin/"
+    sha256 "d9decb1149e371a7a2efdfccdf743aa6b79b5962e744d50569d2e60094b87b20" => :catalina
+  end
 
 	depends_on "pcre"
 	depends_on "libxml2"
@@ -23,13 +28,8 @@ class Yaal < Formula
 
 	def install
 		ENV.deparallelize
-		system "make", "PREFIX=#{prefix}", "CONFIGURE=--enable-auto-sanity", "SYSCONFDIR=#{etc}", "LOCALSTATEDIR=#{var}", "debug", "release"
+		system "make", "PREFIX=#{prefix}", "CONFIGURE=--enable-auto-sanity", "LOCALSTATEDIR=#{var}", "debug", "release"
 		system "make", "doc"
 		system "make", "install-debug", "install-release"
-	end
-
-	bottle do
-		root_url "https://codestation.org/darwin/"
-		sha256 "a0a45faff8bde5e85374bef9a61b27163830d6305b5b194dbef4b41bb731f830" => :catalina
 	end
 end
