@@ -3,7 +3,12 @@ class Huginn < Formula
 	homepage "https://huginn.org/"
 	license "CC-BY-NC-ND-4.0"
 	url "/Users/amok/var/bb-slave/huginn/_deploy/darwin/../..", :using => :git
-	version "0.0.3-2101041839"
+	version "0.0.3-2101060901"
+
+  bottle do
+    root_url "https://codestation.org/darwin/"
+    sha256 "faa1de335e48f197a938e1272bf4baab7f874c6a3c138af2e86bf3a6ec9668b8" => :catalina
+  end
 
 	depends_on "yaal"
 	depends_on "pkg-config"  => :build
@@ -29,13 +34,8 @@ class Huginn < Formula
 	def install
 		ENV.deparallelize
 		system "./setup.sh"
-		system "make", "PREFIX=#{prefix}", "SYSCONFDIR=#{etc}", "LOCALSTATEDIR=#{var}", "release", "doc", "install-release"
+		system "make", "PREFIX=#{prefix}", "release", "doc", "install-release"
 		system "env", "HUGINNPATH=./packages", "./build/release/huginn/1exec", "Testing", "tests"
 		system "env", "TARGET=release", "./tests/shell-tests.sh"
-	end
-
-	bottle do
-		root_url "https://codestation.org/darwin/"
-		sha256 "fcab9e321ac31ec321732e1bb06593d34bb6208708ae0831c53fe47e103bc6fa" => :catalina
 	end
 end
