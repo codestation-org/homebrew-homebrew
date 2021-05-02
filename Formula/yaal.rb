@@ -3,11 +3,11 @@ class Yaal < Formula
 	homepage "https://codestation.org/"
 	license "CC-BY-NC-ND-4.0"
 	url "/Users/amok/var/bb-slave/yaal/_deploy/darwin/../..", :using => :git
-	version "0.0.44-2105010623"
+	version "0.0.44-2105020924"
 
   bottle do
     root_url "https://codestation.org/darwin/"
-    sha256 big_sur: "e3bb27bf0e780030323f61c363e9a6c0ef8da84554d2f36a74dc3cf600bc5a7f"
+    sha256 big_sur: "ff0748aa9944f548b240a71c57205a26c4da7576cbd88cce8f06bf58c07af179"
   end
 
 	depends_on "pcre"
