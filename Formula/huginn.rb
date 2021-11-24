@@ -3,11 +3,11 @@ class Huginn < Formula
 	homepage "https://huginn.org/"
 	license "CC-BY-NC-ND-4.0"
 	url "/Users/amok/var/bb-slave/huginn/_deploy/darwin/../..", :using => :git
-	version "0.0.6-2111180417"
+	version "0.0.6-2111240245"
 
   bottle do
     root_url "https://codestation.org/darwin/"
-    sha256 monterey: "4c519cd1f59cd71904da62aa69cded5851222f1d35f7157892adf5e2f0efbd31"
+    sha256 monterey: "9981ebfd07e4ae1c2e76060cfd7fe760eb400b8fb7cff3c491e6270a3d1c63ba"
   end
 
 	depends_on "yaal"
