@@ -3,11 +3,11 @@ class Huginn < Formula
 	homepage "https://huginn.org/"
 	license "CC-BY-NC-ND-4.0"
 	url "/Users/amok/var/bb-slave/huginn/_deploy/darwin/../..", :using => :git
-	version "0.0.6-2111240326"
+	version "0.0.6-2111251417"
 
   bottle do
     root_url "https://codestation.org/darwin/"
-    sha256 monterey: "40c31727f7878629412f9bbd747374353ba7c0dbb780997ae8fe167880a8e7d7"
+    sha256 monterey: "3ba3b0d9b91dcd3b39007bfcfd961640d8ca1af5217e3d2e8ccf2df26c0089d3"
   end
 
 	depends_on "yaal"
@@ -27,6 +27,7 @@ class Huginn < Formula
 	depends_on "fd"          => :recommended
 	depends_on "bat"         => :recommended
 	depends_on "exa"         => :recommended
+	depends_on "ripgrep"     => :recommended
 	depends_on "pv"          => :recommended
 	depends_on "htop"        => :recommended
 	depends_on "pinfo"       => :recommended
